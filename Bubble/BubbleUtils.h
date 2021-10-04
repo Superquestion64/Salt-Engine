@@ -4,7 +4,8 @@
 	#ifdef BUBBLE_LIB
 		#define BUBBLE_API __declspec(dllexport)
 	#else
-	#define BUBBLE_API __declspec(dllimport)
+		#define BUBBLE_API __declspec(dllimport)
 	#endif
 #else
+	#define BUBBLE_API
 #endif
