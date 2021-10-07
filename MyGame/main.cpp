@@ -1,6 +1,6 @@
-#include "Bubble.h"
+#include "Salt.h"
 
-class MyGameApp : public Bubble::BubbleApp
+class MyGameApp : public Salt::SaltApp
 {
 	void OnUpdate() override
 	{
@@ -8,4 +8,4 @@ class MyGameApp : public Bubble::BubbleApp
 	}
 };
 
-START_BUBBLE_GAME(MyGameApp);
+START_SALT_GAME(MyGameApp);

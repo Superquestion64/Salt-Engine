@@ -1,0 +1,4 @@
+set(SOURCE_FILES SaltApp.cpp)
+set(HEADER_FILES Salt.h SaltApp.h SaltUtils.h)
+add_library(salt_lib SHARED ${SOURCE_FILES} ${HEADER_FILES})
+target_precompile_headers(salt_lib PRIVATE pch.h)

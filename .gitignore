@@ -8,3 +8,5 @@ MyGame/Debug
 MyGame/Release
 
 .vs
+
+glfw/build

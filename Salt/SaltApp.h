@@ -1,10 +1,10 @@
 #pragma once
 
-#include "BubbleUtils.h"
+#include "SaltUtils.h"
 
-namespace Bubble
+namespace Salt
 {
-	class BUBBLE_API BubbleApp
+	class SALT_API SaltApp
 	{
 	public:
 		// This will run the game
@@ -12,7 +12,7 @@ namespace Bubble
 		virtual void OnUpdate();
 	protected:
 		// BubbleApp object can only be created through inheritance
-		BubbleApp();
+		SaltApp();
 
 	private:
 
