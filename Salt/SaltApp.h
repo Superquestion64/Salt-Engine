@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SaltUtils.h"
+#include "GameWindow.h"
 
 namespace Salt
 {
@@ -15,6 +16,7 @@ namespace Salt
 		SaltApp();
 
 	private:
+		GameWindow mGameWindow;
 
 	};
 };

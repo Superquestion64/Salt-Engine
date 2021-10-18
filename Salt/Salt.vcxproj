@@ -90,7 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,7 +107,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SALT_LIB;SALT_WINDOWS;_DEBUG;_CONSOLE;SALT_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -141,7 +141,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,12 +151,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="GLFWimpl\GLFWImplementation.h" />
     <ClInclude Include="Salt.h" />
     <ClInclude Include="SaltApp.h" />
     <ClInclude Include="SaltUtils.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="WindowImplementation.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="GLFWimpl\GLFWImplementation.cpp" />
     <ClCompile Include="SaltApp.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

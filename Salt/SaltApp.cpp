@@ -9,24 +9,22 @@ namespace Salt
 	// This will run the game
 	void SaltApp::Run()
 	{
-		std::cout << "Salt running..." << std::endl;
+		std::cout << "Salt is running..." << std::endl;
 
-		GLFWwindow* window;
-		glfwInit();
-		window = glfwCreateWindow(800, 600, "Test", NULL, NULL);
+		mGameWindow.CreateWindow(800, 600, "Test");
 
 		while (true)
 		{
 			OnUpdate();
-
-			glfwSwapBuffers(window);
-			glfwPollEvents();
+			mGameWindow.SwapBuffers();
+			mGameWindow.PollEvents();
 		}
 	}
 	void SaltApp::OnUpdate()
 	{}
 
 	SaltApp::SaltApp()
-	{}
+	{
+	}
 
 };
