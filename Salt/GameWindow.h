@@ -2,6 +2,7 @@
 
 #include "SaltUtils.h"
 #include "WindowImplementation.h"
+#include "pch.h"
 
 namespace Salt
 {
@@ -16,7 +17,7 @@ namespace Salt
 		int GetWindowHeight() const;
 
 	private:
-		WindowImplementation* mWindow;
+		std::unique_ptr<WindowImplementation> mWindow;
 
 	};
 }
