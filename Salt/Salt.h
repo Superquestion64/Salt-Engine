@@ -3,6 +3,7 @@
 #include "SaltUtils.h"
 #include "SaltApp.h"
 #include "GameWindow.h"
+#include "Sprite.h"
 
 #define START_SALT_GAME(classname)\
 int main()\

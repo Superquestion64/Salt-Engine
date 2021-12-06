@@ -12,5 +12,6 @@ namespace Salt
 		virtual void PollEvents() = 0;
 		virtual int GetWindowWidth() const = 0;
 		virtual int GetWindowHeight() const = 0;
+		virtual ~WindowImplementation() {};
 	};
 }

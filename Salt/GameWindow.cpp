@@ -2,6 +2,7 @@
 #include "GameWindow.h"
 #include "GLFWimpl/GLFWImplementation.h"
 
+
 namespace Salt
 {
 	GameWindow::GameWindow()

@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d374976e-f54a-4ab8-957f-c6f513b9d143}</ProjectGuid>
-    <RootNamespace>Salt</RootNamespace>
+    <ProjectGuid>{f35c263d-b6de-4bd6-99ac-0a00e29d5398}</ProjectGuid>
+    <RootNamespace>stbi</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -86,11 +86,8 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SALT_LIB;SALT_WINDOWS;SALT_OPENGL;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -104,11 +101,8 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SALT_LIB;SALT_WINDOWS;SALT_OPENGL;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -122,11 +116,8 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SALT_LIB;SALT_WINDOWS;SALT_OPENGL;_DEBUG;_CONSOLE;SALT_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader>Create</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -140,11 +131,8 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SALT_LIB;SALT_WINDOWS;SALT_OPENGL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -155,50 +143,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="GameWindow.h" />
-    <ClInclude Include="GLFWimpl\GLFWImplementation.h" />
-    <ClInclude Include="OpenGLimpl\OpenGLRenderer.h" />
-    <ClInclude Include="OpenGLimpl\OpenGLShader.h" />
-    <ClInclude Include="OpenGLimpl\OpenGLSprite.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="RendererImplementation.h" />
-    <ClInclude Include="Salt.h" />
-    <ClInclude Include="SaltApp.h" />
-    <ClInclude Include="SaltUtils.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="ShaderImplementation.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SpriteImplementation.h" />
-    <ClInclude Include="WindowImplementation.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameWindow.cpp" />
-    <ClCompile Include="GLFWimpl\GLFWImplementation.cpp" />
-    <ClCompile Include="OpenGLimpl\OpenGLRenderer.cpp" />
-    <ClCompile Include="OpenGLimpl\OpenGLShader.cpp" />
-    <ClCompile Include="OpenGLimpl\OpenGLSprite.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="SaltApp.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Sprite.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\glad\glad.vcxproj">
-      <Project>{44fa6f14-02fe-4692-94f9-7983aa6c0669}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\glfw\build\src\glfw.vcxproj">
-      <Project>{5382e227-53b6-381e-a275-5d12a3045797}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\stbi\stbi.vcxproj">
-      <Project>{f35c263d-b6de-4bd6-99ac-0a00e29d5398}</Project>
-    </ProjectReference>
+    <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

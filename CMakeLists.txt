@@ -15,6 +15,10 @@ elseif(UNIX)
 	add_definitions(-DSALT_LINUX)
 endif()
 
+add_definitions(SALT_OPENGL)
+
 add_subdirectory(MyGame)
 add_subdirectory(Salt)
 add_subdirectory(glfw)
+add_subdirectory(glad)
+add_subdirectory(stbi)

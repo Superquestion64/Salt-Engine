@@ -5,11 +5,15 @@ namespace Salt
 {
 	void GlfwImplementation::Init()
 	{
-		glfwInit();
+		if (glfwInit() == GL_FALSE)
+		{
+			std::cout << "ERROR: GLFW failed to init" << std::endl;
+		}
 	}
 	void GlfwImplementation::CreateWindow(int width, int height, const std::string& name)
 	{
 		mWindow = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
+		glfwMakeContextCurrent(mWindow);
 	}
 	void GlfwImplementation::SwapBuffers()
 	{

@@ -1,12 +1,16 @@
+.vs
 Debug
 Release
 
-Bubble/Debug
-Bubble/Release
+Salt/Debug
+Salt/Release
 
 MyGame/Debug
 MyGame/Release
 
-.vs
-
 glfw/build
+
+stbi/Debug
+stbi/Release
+
+glad/x64
