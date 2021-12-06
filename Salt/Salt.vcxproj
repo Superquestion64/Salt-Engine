@@ -90,7 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)Salt;$(SolutionDir)glfw\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -108,7 +108,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)Salt;$(SolutionDir)glfw\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -124,7 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SALT_LIB;SALT_WINDOWS;SALT_OPENGL;_DEBUG;_CONSOLE;SALT_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)Salt;$(SolutionDir)glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -144,7 +144,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Anonymous\Downloads\Game Engine\MyGame\stbi;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glad\include;C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;C:\Users\Anonymous\Downloads\Game Engine\MyGame\glfw\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)Salt;$(SolutionDir)glfw\include;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>

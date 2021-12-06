@@ -33,7 +33,7 @@ namespace Salt
 		// TEXTURE
 
 		Salt::Sprite fish;
-		fish.LoadImage("C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Textures/Clown.png");
+		fish.LoadImage("C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Textures/Copy2.png");
 
 		while (true)
 		{
