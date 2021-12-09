@@ -35,6 +35,8 @@ namespace Salt
 		Salt::Sprite fish;
 		fish.LoadImage("C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Textures/Clown.png");
 
+		mTimeOfNextFrame = std::chrono::steady_clock::now() + mFrameDuration;
+
 		while (true)
 		{
 			Renderer::ClearFrame();
@@ -43,8 +45,12 @@ namespace Salt
 
 			Renderer::Draw(fish, 0, 0, fish.GetWidth(), fish.GetHeight(), myShader);
 
+			std::this_thread::sleep_until(mTimeOfNextFrame);
+
 			mGameWindow.SwapBuffers();
 			mGameWindow.PollEvents();
+
+			mTimeOfNextFrame += mFrameDuration;
 		}
 
 		Renderer::ShutDown();

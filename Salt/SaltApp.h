@@ -3,6 +3,8 @@
 #include "SaltUtils.h"
 #include "GameWindow.h"
 
+#define FRAMES_PER_SECOND 30
+
 namespace Salt
 {
 	class SALT_API SaltApp
@@ -12,12 +14,13 @@ namespace Salt
 		void Run();
 		virtual void OnUpdate();
 	protected:
-		// BubbleApp object can only be created through inheritance
+		// SaltApp object can only be created through inheritance
 		SaltApp();
 
 	private:
 		GameWindow mGameWindow;
-
+		std::chrono::steady_clock::time_point mTimeOfNextFrame;
+		const std::chrono::milliseconds mFrameDuration{ 1000 / FRAMES_PER_SECOND };
 	};
 };
 
