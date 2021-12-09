@@ -9,3 +9,9 @@
 #else
 	#define SALT_API
 #endif
+
+#ifdef SALT_DEBUG
+	#define SALT_LOG(x) std::cout<<x<<std::endl; 
+#else
+	#define SALT_LOG(x)
+#endif

@@ -2,6 +2,7 @@
 #include "OpenGLShader.h"
 #include "glad/glad.h"
 
+
 namespace Salt
 {
 	void OpenGLShader::Load(const std::string& vertexFile, const std::string& fragmentFile)

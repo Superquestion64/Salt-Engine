@@ -16,7 +16,7 @@ namespace Salt
 	// This will run the game
 	void SaltApp::Run()
 	{
-		std::cout << "Salt is running..." << std::endl;
+		SALT_LOG("Salt app running...");
 
 		mGameWindow.CreateWindow(800, 600, "Test");
 
@@ -33,7 +33,7 @@ namespace Salt
 		// TEXTURE
 
 		Salt::Sprite fish;
-		fish.LoadImage("C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Textures/Clown.png");
+		fish.LoadImage("Assets/Textures/Clown.png");
 
 		mTimeOfNextFrame = std::chrono::steady_clock::now() + mFrameDuration;
 

@@ -22,7 +22,7 @@ namespace Salt
 		unsigned char* image{ nullptr };
 		int numChannels{ 0 };
 		stbi_set_flip_vertically_on_load(true);
-		image = stbi_load(pictureFile.c_str(), &mWidth, &mHeight, &numChannels, 0);
+		image = stbi_load(pictureFile.c_str(), &mWidth, &mHeight, &numChannels, 3);
 		assert(image != nullptr);
 		// Texture
 		glGenTextures(1, &mTexture);
