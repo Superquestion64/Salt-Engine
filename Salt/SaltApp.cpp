@@ -24,8 +24,8 @@ namespace Salt
 
 		// Shaders
 		Salt::Shader myShader;
-		myShader.Load("C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Shader/myVertexShader.glsl", 
-			"C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Shader/myFragmentShader.glsl");
+		myShader.Load("Assets/Shader/myVertexShader.glsl", 
+			"Assets/Shader/myFragmentShader.glsl");
 		myShader.SetVec2IntUniform("screenSize",
 			mGameWindow.GetWindowWidth(),
 			mGameWindow.GetWindowHeight());
@@ -33,7 +33,7 @@ namespace Salt
 		// TEXTURE
 
 		Salt::Sprite fish;
-		fish.LoadImage("C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Textures/Copy2.png");
+		fish.LoadImage("C:/Users/Anonymous/Downloads/Game Engine/MyGame/Salt/Assets/Textures/Clown.png");
 
 		while (true)
 		{
@@ -41,7 +41,7 @@ namespace Salt
 
 			OnUpdate();
 
-			Renderer::Draw(fish, 100, 50, fish.GetWidth(), fish.GetHeight(), myShader);
+			Renderer::Draw(fish, 0, 0, fish.GetWidth(), fish.GetHeight(), myShader);
 
 			mGameWindow.SwapBuffers();
 			mGameWindow.PollEvents();

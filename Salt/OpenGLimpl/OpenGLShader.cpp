@@ -36,11 +36,11 @@ namespace Salt
 		std::stringstream fragmentStringStream;
 		fragmentStringStream << fragmentFileStream.rdbuf();
 		std::string fragmentCode{ fragmentStringStream.str() };
-		const char* cfragmentCode{ fragmentCode.c_str() };
+		const char* cFragmentCode{ fragmentCode.c_str() };
 		fragmentFileStream.close();
 		// Fragment shader
 		unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragmentShader, 1, &cfragmentCode, NULL);
+		glShaderSource(fragmentShader, 1, &cFragmentCode, NULL);
 		glCompileShader(fragmentShader);
 		// Check for shader compile errors
 		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
