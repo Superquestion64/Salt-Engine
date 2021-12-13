@@ -13,6 +13,7 @@ namespace Salt
 		// This will run the game
 		void Run();
 		virtual void OnUpdate();
+		virtual void OnKeyPressed(KeyPressedEvent &event);
 	protected:
 		// SaltApp object can only be created through inheritance
 		SaltApp();

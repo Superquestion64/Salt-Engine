@@ -20,6 +20,10 @@ namespace Salt
 
 		mGameWindow.CreateWindow(800, 600, "Test");
 
+		mGameWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
+			OnKeyPressed(event);
+			});
+
 		Renderer::Init();
 
 		// Shaders
@@ -57,6 +61,11 @@ namespace Salt
 	}
 	void SaltApp::OnUpdate()
 	{}
+
+	void SaltApp::OnKeyPressed(KeyPressedEvent &event)
+	{
+		SALT_LOG(event.GetKeyCode());
+	}
 
 	SaltApp::SaltApp()
 	{}

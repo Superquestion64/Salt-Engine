@@ -1,5 +1,6 @@
 #pragma once
-#include <string>
+#include "pch.h"
+#include "Events.h"
 
 namespace Salt
 {
@@ -13,5 +14,6 @@ namespace Salt
 		virtual int GetWindowWidth() const = 0;
 		virtual int GetWindowHeight() const = 0;
 		virtual ~WindowImplementation() {};
+		virtual void SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func) = 0;
 	};
 }

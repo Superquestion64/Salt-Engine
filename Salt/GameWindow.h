@@ -2,6 +2,7 @@
 
 #include "SaltUtils.h"
 #include "WindowImplementation.h"
+#include "Events.h"
 #include "pch.h"
 
 namespace Salt
@@ -15,6 +16,7 @@ namespace Salt
 		void PollEvents();
 		int GetWindowWidth() const;
 		int GetWindowHeight() const;
+		void SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func);
 
 	private:
 		std::unique_ptr<WindowImplementation> mWindow;
