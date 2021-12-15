@@ -10,6 +10,7 @@ Unit::Unit(const std::string& imageFile, int xPos, int yPos, int speed)
 	mImage.LoadImage(imageFile);
 }
 
+
 int Unit::GetUnitWidth() const
 {
 	return mImage.GetWidth();
@@ -111,6 +112,10 @@ void Unit::UpdatePosition(int windowWidth, int windowHeight)
 	case Direction::Right:
 		if (IsPositionPossible(mPosX + mSpeed, mPosY, windowWidth, windowHeight))
 			mPosX += mSpeed;
+		break;
+	case Direction::None:
+		break;
+	default:
 		break;
 	}
 }

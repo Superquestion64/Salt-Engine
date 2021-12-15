@@ -67,13 +67,23 @@ namespace Salt
 		glDeleteShader(fragmentShader);
 
 	}
-	void OpenGLShader::SetVec2IntUniform(const std::string& unifName, int first, int second)
+	void OpenGLShader::SetVec2IntUniform(const std::string& unifName, int width, int height)
 	{
 		assert(mShaderProgram);
 
 		glUseProgram(mShaderProgram);
 		int location{ glGetUniformLocation(mShaderProgram, unifName.c_str()) };
-		glUniform2i(location, first, second);
+		glUniform2i(location, width, height);
+		mWidth = width;
+		mHeight = height;
+	}
+	int OpenGLShader::GetWindowWidth() const
+	{
+		return mWidth;
+	}
+	int OpenGLShader::GetWindowHeight() const
+	{
+		return mHeight;
 	}
 	void OpenGLShader::Use()
 	{

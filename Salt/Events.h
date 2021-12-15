@@ -1,8 +1,10 @@
 #pragma once
 
+#include "SaltUtils.h"
+
 namespace Salt
 {
-	class KeyPressedEvent
+	class SALT_API KeyPressedEvent
 	{
 	public:
 		KeyPressedEvent(int keyCode);
