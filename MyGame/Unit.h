@@ -4,7 +4,7 @@
 class Unit
 {
 public:
-	Unit() = delete;
+	Unit();
 	Unit(const std::string& imageFile, int xPos, int yPos, int speed);
 	enum class Direction {
 		None,
@@ -26,9 +26,9 @@ public:
 	bool CollideWith(const Unit &other) const;
 	void Draw(Salt::Shader& shader);
 	void UpdatePosition(int windowWidth, int windowHeight);
+	Unit::Direction NewDirection() const;
 private:
 	bool IsPositionPossible(int newX, int newY, int& windowWidth, int& windowHeight) const;
-
 	Salt::Sprite mImage;
 	int mPosX;
 	int mPosY;

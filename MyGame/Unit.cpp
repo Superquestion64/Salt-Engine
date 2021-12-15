@@ -1,5 +1,9 @@
 #include "Unit.h"
 
+Unit::Unit() : mPosX(0), mPosY(0), mSpeed(0), mDirection(Direction::None)
+{
+}
+
 Unit::Unit(const std::string& imageFile, int xPos, int yPos, int speed)
 	: mPosX(xPos), mPosY(yPos), mSpeed(speed), mDirection(Direction::None)
 {
@@ -66,13 +70,17 @@ bool Unit::CollideWith(const Unit& villain) const
 	// When intersecting based on the x axis
 	bool intersectOnX{
 		(mPosX <= villainXleft && villainXleft <= mPosX + GetUnitWidth()) ||
-		(mPosX <= villainXright && villainXright <= mPosX + GetUnitWidth())
+		(mPosX <= villainXright && villainXright <= mPosX + GetUnitWidth()) ||
+		(villainXleft <= mPosX && mPosX <= villainXright) ||
+		(villainXleft <= mPosX + GetUnitWidth() && mPosX + GetUnitWidth() <= villainXright)
 	};
 
 	// When intersecting based on the y axis
 	bool intersectOnY{
 		(mPosY <= villainYbottom && villainYbottom <= mPosY + GetUnitHeight()) ||
-		(mPosY <= villainYtop && villainYtop <= mPosY + GetUnitHeight())
+		(mPosY <= villainYtop && villainYtop <= mPosY + GetUnitHeight()) ||
+		(villainYbottom <= mPosY && mPosY <= villainYtop) ||
+		(villainYbottom <= mPosY + GetUnitHeight() && mPosY + GetUnitHeight() <= villainYtop)
 	};
 
 	return intersectOnX && intersectOnY;
@@ -105,6 +113,28 @@ void Unit::UpdatePosition(int windowWidth, int windowHeight)
 			mPosX += mSpeed;
 		break;
 	}
+}
+
+Unit::Direction Unit::NewDirection() const
+{
+	Unit::Direction newDir;
+	int dirVal{ rand() % 4 };
+	switch (dirVal)
+	{
+	case 0:
+		newDir = Unit::Direction::Down;
+		break;
+	case 1:
+		newDir = Unit::Direction::Up;
+		break;
+	case 2:
+		newDir = Unit::Direction::Left;
+		break;
+	default:
+		newDir = Unit::Direction::Right;
+		break;
+	}
+	return newDir;
 }
 
 bool Unit::IsPositionPossible(int newX, int newY, int& windowWidth, int& windowHeight) const
