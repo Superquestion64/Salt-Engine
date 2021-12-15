@@ -18,27 +18,6 @@ namespace Salt
 	{
 		SALT_LOG("Salt app running...");
 
-		mGameWindow.CreateWindow(800, 600, "Test");
-
-		mGameWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
-			OnKeyPressed(event);
-			});
-
-		Renderer::Init();
-
-		// Shaders
-		Salt::Shader myShader;
-		myShader.Load("Assets/Shader/myVertexShader.glsl", 
-			"Assets/Shader/myFragmentShader.glsl");
-		myShader.SetVec2IntUniform("screenSize",
-			mGameWindow.GetWindowWidth(),
-			mGameWindow.GetWindowHeight());
-
-		// TEXTURE
-
-		Salt::Sprite fish;
-		fish.LoadImage("Assets/Textures/Clown.png");
-
 		mTimeOfNextFrame = std::chrono::steady_clock::now() + mFrameDuration;
 
 		while (true)
@@ -46,8 +25,6 @@ namespace Salt
 			Renderer::ClearFrame();
 
 			OnUpdate();
-
-			Renderer::Draw(fish, 0, 0, fish.GetWidth(), fish.GetHeight(), myShader);
 
 			std::this_thread::sleep_until(mTimeOfNextFrame);
 
@@ -67,7 +44,25 @@ namespace Salt
 		SALT_LOG(event.GetKeyCode());
 	}
 
+	int SaltApp::GetGameWindowWidth() const
+	{
+		return mGameWindow.GetWindowWidth();
+	}
+
+	int SaltApp::GetGameWindowHeight() const
+	{
+		return mGameWindow.GetWindowHeight();
+	}
+
 	SaltApp::SaltApp()
-	{}
+	{
+		mGameWindow.CreateWindow(800, 800, "Game");
+
+		mGameWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
+			OnKeyPressed(event);
+			});
+
+		Renderer::Init();
+	}
 
 };

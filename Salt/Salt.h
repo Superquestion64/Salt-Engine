@@ -7,6 +7,7 @@
 #include "Shader.h"
 #include "Renderer.h"
 #include "Events.h"
+#include "KeyCodes.h"
 
 #define START_SALT_GAME(classname)\
 int main()\

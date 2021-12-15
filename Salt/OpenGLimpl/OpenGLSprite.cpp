@@ -22,7 +22,7 @@ namespace Salt
 		unsigned char* image{ nullptr };
 		int numChannels{ 0 };
 		stbi_set_flip_vertically_on_load(true);
-		image = stbi_load(pictureFile.c_str(), &mWidth, &mHeight, &numChannels, 3);
+		image = stbi_load(pictureFile.c_str(), &mWidth, &mHeight, &numChannels, 0);
 		assert(image != nullptr);
 		// Texture
 		glGenTextures(1, &mTexture);
@@ -34,7 +34,7 @@ namespace Salt
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		// load image, create texture and generate mipmaps
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, mWidth, mHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, mWidth, mHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 		glGenerateMipmap(GL_TEXTURE_2D);
 
 		stbi_image_free(image);

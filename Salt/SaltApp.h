@@ -14,10 +14,11 @@ namespace Salt
 		void Run();
 		virtual void OnUpdate();
 		virtual void OnKeyPressed(KeyPressedEvent &event);
+		int GetGameWindowWidth() const;
+		int GetGameWindowHeight() const;
 	protected:
 		// SaltApp object can only be created through inheritance
 		SaltApp();
-
 	private:
 		GameWindow mGameWindow;
 		std::chrono::steady_clock::time_point mTimeOfNextFrame;

@@ -31,6 +31,9 @@ namespace Salt
 	void Renderer::ShutDown()
 	{
 		if (mInstance != nullptr)
+		{
 			delete mInstance;
+			mInstance = nullptr;
+		}
 	}
 }

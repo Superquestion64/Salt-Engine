@@ -158,6 +158,7 @@
     <ClInclude Include="Events.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="GLFWimpl\GLFWImplementation.h" />
+    <ClInclude Include="KeyCodes.h" />
     <ClInclude Include="OpenGLimpl\OpenGLRenderer.h" />
     <ClInclude Include="OpenGLimpl\OpenGLShader.h" />
     <ClInclude Include="OpenGLimpl\OpenGLSprite.h" />
