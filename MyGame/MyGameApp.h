@@ -1,7 +1,7 @@
 #pragma once
 /* 
 Author: Charles Vega
-Last Modified: December 15, 2021
+Last Modified: December 16, 2021
 This is the header class for a game created through the Salt engine
 In the game the hero must consume salt to evolve
 The villain rapidly evolves with time and teleports around the map

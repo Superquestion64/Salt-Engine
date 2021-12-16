@@ -8,6 +8,7 @@ set(SOURCE_FILES
 	Renderer.cpp
 	Shader.cpp
 	Sprite.cpp
+	Events.cpp
 )
 set(HEADER_FILES 
 	Salt.h 
@@ -26,6 +27,8 @@ set(HEADER_FILES
 	Sprite.h
 	SpriteImplementation.h
 	WindowImplementation.h
+	Events.h
+	KeyCodes.h
 )
 add_library(salt_lib SHARED ${SOURCE_FILES} ${HEADER_FILES})
 target_precompile_headers(salt_lib PRIVATE pch.h)

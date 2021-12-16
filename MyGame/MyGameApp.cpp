@@ -1,6 +1,6 @@
 /*
 Author: Charles Vega
-Last Modified: December 15, 2021
+Last Modified: December 16, 2021
 This is the implementation class for a game created through the Salt engine
 In the game the hero must consume salt to evolve
 The villain rapidly evolves with time and teleports around the map
@@ -164,8 +164,9 @@ void MyGameApp::PlayIntro2()
 		int X{ rand() % (mWindowWidth - 100) };
 		int Y{ rand() % (mWindowHeight - 100) };
 		mVillain = Unit{ mVillainPicture, X, Y, 0 };
-		// Reset the frame counter
+		// Reset the frame counter and salt eaten
 		mFrameCounter = 0;
+		mSaltConsumed = 0;
 		ClearSalt();
 	}
 }
