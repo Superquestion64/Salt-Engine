@@ -120,7 +120,7 @@ void MyGameApp::PlayIntro1()
 	{
 		// The hero will keep moving right until it has reached salt, as calculated
 		mDemoCharacter.SetDirection(Unit::Direction::Right);
-		// We only want to draw salt when the hero is on top of it
+		// We only want to draw salt when the hero is moving towards it
 		DrawSalt();
 	}
 }
@@ -261,6 +261,8 @@ bool MyGameApp::VillainVictoryCondition()
 {
 	mBackground = Unit{ "Assets/Textures/VillainEnd.png", 0, 0, 0 };
 	mDemoCharacter = Unit{ "Assets/Textures/FinalVillain.png", mWindowWidth / 4, mWindowHeight / 4, 10 };
+	// Reset the frame counter
+	mFrameCounter = 0;
 	ClearSalt();
 	return true;
 }
@@ -275,6 +277,8 @@ bool MyGameApp::HeroVictoryCondition()
 		mBackground = Unit{ "Assets/Textures/HeroEnd.png", 0, 0, 0 };
 		mDemoCharacter = Unit{ "Assets/Textures/FinalHero.png", mWindowWidth / 3, mWindowHeight / 4, 10 };
 		mHero = Unit{ "Assets/Textures/FinalHero.png", mHero.GetPosX(), mHero.GetPosY(), 10 };
+		// Reset the frame counter
+		mFrameCounter = 0;
 		ClearSalt();
 		return true;
 	}

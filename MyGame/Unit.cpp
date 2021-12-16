@@ -72,16 +72,14 @@ bool Unit::CollideWith(const Unit& villain) const
 	bool intersectOnX{
 		(mPosX <= villainXleft && villainXleft <= mPosX + GetUnitWidth()) ||
 		(mPosX <= villainXright && villainXright <= mPosX + GetUnitWidth()) ||
-		(villainXleft <= mPosX && mPosX <= villainXright) ||
-		(villainXleft <= mPosX + GetUnitWidth() && mPosX + GetUnitWidth() <= villainXright)
+		(villainXleft <= mPosX && mPosX + GetUnitWidth() <= villainXright)
 	};
 
 	// When intersecting based on the y axis
 	bool intersectOnY{
 		(mPosY <= villainYbottom && villainYbottom <= mPosY + GetUnitHeight()) ||
 		(mPosY <= villainYtop && villainYtop <= mPosY + GetUnitHeight()) ||
-		(villainYbottom <= mPosY && mPosY <= villainYtop) ||
-		(villainYbottom <= mPosY + GetUnitHeight() && mPosY + GetUnitHeight() <= villainYtop)
+		(villainYbottom <= mPosY && mPosY + GetUnitHeight() <= villainYtop)
 	};
 
 	return intersectOnX && intersectOnY;
