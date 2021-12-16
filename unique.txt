@@ -1,0 +1,36 @@
+# In this game the hero must evolve fast enough to defeat the villain
+If the hero fails to defeat the villain in time, it's game over. The villain is too powerful to defeat
+Here is a list indicating what makes this game unique:
+- An intro and ending sequence!
+	The intro sequence will guide new players on how to play the game, it comes in two parts
+	Part one of the intro shows how the hero can evolve by eating enough salt
+	Part two of the intro shows the hero can defeat the villain when strong enough
+	There are also two different endings in the game
+	In one ending the hero is victorious, and expresses joy by jumping up and down
+	The other ending is the villain's victory, they will mockingly jump in the screen
+- Logic determining the villain's defeat
+	In game logic dictates there are two ways for the villain to be defeated
+	Either the hero must consume enough salt such that they are larger, thus more powerful than the villain
+	Or the hero has reached their final form, therefore they can overpower the villain regardless of size
+- Logic determining the villain's victory
+	The villain's goal in this game is to reach their final form
+	When the villain reaches their final form they cannot be defeated by the hero, it is automatic game over
+- Evolution mechanic
+	Both the villain and the hero can evolve throughout the game
+	The villain will grow stronger over time represented by their growing size
+	The hero must eat salt to evolve into their final form, it is their objective to overpower the villain
+- Salt spawning and villain teleportation
+	Salt spawns in random places of the map, it is up to the hero to consume as much salt as they can
+	The villain will teleport randomly across the map in an attempt to avoid the hero
+	Salt spawns every second of the game, and the villain will teleport and potentially evolve every 3.3 seconds
+- Custom Assets
+	27 assets have been custom made for this game
+	The hero has many forms to indicate their stage in evolution, they are all represented with a different asset
+	Likewise the villain takes on different forms for each evolution, this requires a new asset each time
+	Salt spawns across the map, this is represented with one asset
+	There are custom backgrounds in this game, for the intro sequence, main arena, and ending sequence
+- Debug mode
+	With debug mode enabled the player can spawn as much salt as they want into the map by pressing space
+	Debug mode is enabled when Game_Debug is defined in the MyGame project
+	By default debug mode is defined through CMake
+	Spawning salt is considered cheating as the game is intended to be won without this mechanic

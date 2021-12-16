@@ -4,6 +4,8 @@ set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/.. PROPERTY VS_STARTUP_PROJEC
 
 include_directories(../Salt)
 
+add_definitions(-DGAME_DEBUG)
+
 file(COPY Assets DESTINATION ../MyGame)
 file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug)
 file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release)

@@ -103,13 +103,16 @@ void MyGameApp::PlayIntro1()
 		switch (mFrameCounter / FRAMES_PER_SECOND)
 		{
 		case 2:
-			mDemoCharacter = Unit{ "Assets/Textures/TrueHero3.png", mDemoCharacter.GetPosX(), mDemoCharacter.GetPosY(), 0 };
+			mDemoCharacter = Unit{ "Assets/Textures/TrueHero3.png", 
+				mDemoCharacter.GetPosX(), mDemoCharacter.GetPosY(), 0 };
 			break;
 		case 3:
-			mDemoCharacter = Unit{ "Assets/Textures/TrueHero5.png", mDemoCharacter.GetPosX(), mDemoCharacter.GetPosY(), 0 };
+			mDemoCharacter = Unit{ "Assets/Textures/TrueHero5.png", 
+				mDemoCharacter.GetPosX(), mDemoCharacter.GetPosY(), 0 };
 			break;
 		case 4:
-			mDemoCharacter = Unit{ "Assets/Textures/TrueHero7.png", mDemoCharacter.GetPosX(), mDemoCharacter.GetPosY(), 0 };
+			mDemoCharacter = Unit{ "Assets/Textures/TrueHero7.png", 
+				mDemoCharacter.GetPosX(), mDemoCharacter.GetPosY(), 0 };
 			break;
 		default:
 			break;
@@ -197,16 +200,16 @@ void MyGameApp::VictorySequence()
 void MyGameApp::SpawnSalt()
 {
 	// Determine the position for the new salt
-	int newX{ rand() % (mWindowWidth - 100) };
-	int newY{ rand() % (mWindowHeight - 100) };
-	mSalt.push_back(Unit{ "Assets/Textures/Salt.png", newX, newY, 0 });
+	int X{ rand() % (mWindowWidth - 100) };
+	int Y{ rand() % (mWindowHeight - 100) };
+	mSalt.push_back(Unit{ "Assets/Textures/Salt.png", X, Y, 0 });
 }
 
 // Teleports the villain to a random location and checks if it should evolve
 void MyGameApp::TeleportVillain()
 {
 	// Teleport the villain after a certain interval
-	if (!mEndFlag && mFrameCounter % (FRAMES_PER_SECOND * 3) == 0)
+	if (!mEndFlag && mFrameCounter % int(FRAMES_PER_SECOND * 3.3) == 0)
 	{
 		// Check if the villain should evolve
 		EvolveVillain();
@@ -248,10 +251,19 @@ void MyGameApp::EvolveHero()
 			mHeroPicture[24]++;
 			mHero = Unit{ mHeroPicture, mHero.GetPosX(), mHero.GetPosY(), 10 };
 		}
+		// We need a special case for the hero to reach form 10
+		else if (mHeroPicture[24] == '9')
+		{
+			mSaltConsumed -= 3;
+			mHeroPicture = "Assets/Textures/FinalHero.png";
+			mHero = Unit{ "Assets/Textures/TrueHero10.png", 
+				mHero.GetPosX(), mHero.GetPosY(), 10 };
+		}
 		// At the final stage of the hero, it becomes FinalHero
 		else
 		{
-			mHero = Unit{ "Assets/Textures/FinalHero.png", mHero.GetPosX(), mHero.GetPosY(), 10 };
+			mHero = Unit{ "Assets/Textures/FinalHero.png", 
+				mHero.GetPosX(), mHero.GetPosY(), 10 };
 			mFinalHeroFlag = true;
 		}
 	}
@@ -261,7 +273,8 @@ void MyGameApp::EvolveHero()
 bool MyGameApp::VillainVictoryCondition()
 {
 	mBackground = Unit{ "Assets/Textures/VillainEnd.png", 0, 0, 0 };
-	mDemoCharacter = Unit{ "Assets/Textures/FinalVillain.png", mWindowWidth / 4, mWindowHeight / 4, 10 };
+	mDemoCharacter = Unit{ "Assets/Textures/FinalVillain.png", 
+		mWindowWidth / 4, mWindowHeight / 4, 10 };
 	// Reset the frame counter
 	mFrameCounter = 0;
 	ClearSalt();
@@ -276,8 +289,10 @@ bool MyGameApp::HeroVictoryCondition()
 	{
 		mFinalHeroFlag = true;
 		mBackground = Unit{ "Assets/Textures/HeroEnd.png", 0, 0, 0 };
-		mDemoCharacter = Unit{ "Assets/Textures/FinalHero.png", mWindowWidth / 3, mWindowHeight / 4, 10 };
-		mHero = Unit{ "Assets/Textures/FinalHero.png", mHero.GetPosX(), mHero.GetPosY(), 10 };
+		mDemoCharacter = Unit{ "Assets/Textures/FinalHero.png", 
+			mWindowWidth / 3, mWindowHeight / 4, 10 };
+		mHero = Unit{ "Assets/Textures/FinalHero.png", 
+			mHero.GetPosX(), mHero.GetPosY(), 10 };
 		// Reset the frame counter
 		mFrameCounter = 0;
 		ClearSalt();
