@@ -38,3 +38,6 @@ Here is a list indicating what makes this game unique:
 	Debug mode is enabled when Game_Debug is defined in the MyGame project
 	By default debug mode is defined through CMake
 	Spawning salt is considered cheating as the game is intended to be won without this mechanic
+- Window closing functionality
+	Implemented functionality for the game window to close
+	Pressing Esc or clicking the x button of the window will close the game and end the program

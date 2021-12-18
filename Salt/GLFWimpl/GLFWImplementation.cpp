@@ -54,4 +54,12 @@ namespace Salt
 	{
 		mCallbacks.KeyPressedCallback = func;
 	}
+	void GlfwImplementation::Close()
+	{
+		glfwSetWindowShouldClose(mWindow, true);
+	}
+	bool GlfwImplementation::WindowShouldClose() const
+	{
+		return glfwWindowShouldClose(mWindow);
+	}
 }

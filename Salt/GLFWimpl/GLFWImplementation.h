@@ -16,6 +16,8 @@ namespace Salt
 		virtual int GetWindowWidth() const override;
 		virtual int GetWindowHeight() const override;
 		virtual void SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func) override;
+		virtual void Close() override;
+		virtual bool WindowShouldClose() const override;
 	private:
 		struct CallbackFunctions
 		{

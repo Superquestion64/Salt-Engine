@@ -17,6 +17,8 @@ namespace Salt
 		int GetWindowWidth() const;
 		int GetWindowHeight() const;
 		void SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func);
+		void Close();
+		bool WindowShouldClose() const;
 
 	private:
 		std::unique_ptr<WindowImplementation> mWindow;

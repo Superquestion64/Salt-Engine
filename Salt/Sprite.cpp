@@ -14,10 +14,10 @@ namespace Salt
 #endif
 	}
 
+	
 	// Loads the image based on the given address provided in pictureFile using OpenGL
 	void Sprite::LoadImage(const std::string& pictureFile)
 	{
-		mSpriteImplementation.reset(new OpenGLSprite);
 		mSpriteImplementation->LoadImage(pictureFile);
 	}
 

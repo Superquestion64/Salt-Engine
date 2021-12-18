@@ -15,5 +15,7 @@ namespace Salt
 		virtual int GetWindowHeight() const = 0;
 		virtual ~WindowImplementation() {};
 		virtual void SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func) = 0;
+		virtual void Close() = 0;
+		virtual bool WindowShouldClose() const = 0;
 	};
 }

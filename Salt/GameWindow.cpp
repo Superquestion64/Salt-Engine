@@ -42,4 +42,12 @@ namespace Salt
 	{
 		mWindow->SetKeyPressedCallback(func);
 	}
+	void GameWindow::Close()
+	{
+		mWindow->Close();
+	}
+	bool GameWindow::WindowShouldClose() const
+	{
+		return mWindow->WindowShouldClose();
+	}
 }

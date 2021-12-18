@@ -20,7 +20,7 @@ namespace Salt
 
 		mTimeOfNextFrame = std::chrono::steady_clock::now() + mFrameDuration;
 
-		while (true)
+		while (!mGameWindow.WindowShouldClose())
 		{
 			Renderer::ClearFrame();
 
@@ -52,6 +52,11 @@ namespace Salt
 	int SaltApp::GetGameWindowHeight() const
 	{
 		return mGameWindow.GetWindowHeight();
+	}
+
+	void SaltApp::Close()
+	{
+		mGameWindow.Close();
 	}
 
 	SaltApp::SaltApp()

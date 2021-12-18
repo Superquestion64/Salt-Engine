@@ -16,6 +16,8 @@ namespace Salt
 		virtual void OnKeyPressed(KeyPressedEvent &event);
 		int GetGameWindowWidth() const;
 		int GetGameWindowHeight() const;
+		// Close the window
+		void Close();
 	protected:
 		// SaltApp object can only be created through inheritance
 		SaltApp();

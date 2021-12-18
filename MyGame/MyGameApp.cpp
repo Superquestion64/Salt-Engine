@@ -272,5 +272,7 @@ void MyGameApp::OnKeyPressed(Salt::KeyPressedEvent& event)
 		SpawnSalt();
 #endif
 		break;
+	case SALT_KEY_ESCAPE:
+		Salt::SaltApp::Close();
 	}
 }
