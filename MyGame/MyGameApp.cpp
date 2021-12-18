@@ -163,6 +163,7 @@ void MyGameApp::PlayIntro2()
 		mVillain.SetPosY(Y);
 		// Reset the frame counter and salt eaten
 		mFrameCounter = 0;
+		mDemoCharacter.UnitDelete();
 		ClearSalt();
 	}
 }

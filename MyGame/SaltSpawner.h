@@ -14,6 +14,7 @@ class SaltSpawner : public Unit
 public:
 	// Initializes the salt's image
 	SaltSpawner(const std::string& SaltPicture, int xPos, int yPos);
+
 	// Draws the salt when given a shader object
 	virtual void Draw(Salt::Shader& shader) override;
 	// Returns the x position of the salt
@@ -24,6 +25,7 @@ public:
 	virtual int GetUnitWidth() const override;
 	// Returns the height of the salt
 	virtual int GetUnitHeight() const override;
+	// Deletes the salt texture when we don't need it
 	virtual void UnitDelete() override;
 private:
 	// Sprite object of the salt's image

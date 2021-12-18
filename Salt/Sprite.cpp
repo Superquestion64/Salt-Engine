@@ -41,7 +41,6 @@ namespace Salt
 	void Sprite::SpriteDelete()
 	{
 		mSpriteImplementation->DeleteTexture();
-		mSpriteImplementation.release();
 	}
 }
 

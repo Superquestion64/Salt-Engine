@@ -19,6 +19,7 @@ public:
 	Hero();
 	// Initializes the image, x position, y position, and speed of the Hero
 	Hero(const std::string& HeroPicture, int xPos, int yPos, int speed);
+	~Hero();
 	// Defines the directions a Hero can have
 	enum class Direction {
 		None,
@@ -56,6 +57,7 @@ public:
 	void UpdatePosition(int windowWidth, int windowHeight);
 	// Function to get a random direction
 	Hero::Direction NewDirection() const;
+	// Deletes the hero texture when we don't need it
 	virtual void UnitDelete() override;
 private:
 	// Helper function calculates if a new position would put the Hero outside of the window boundaries

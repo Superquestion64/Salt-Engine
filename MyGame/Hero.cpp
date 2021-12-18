@@ -19,6 +19,12 @@ Hero::Hero(const std::string& HeroPicture, int xPos, int yPos, int speed)
 	mHero.LoadImage(HeroPicture);
 }
 
+Hero::~Hero()
+{
+	UnitDelete();
+}
+
+
 
 bool Hero::Update(Unit& Villain, std::vector<SaltSpawner>& mSalt)
 {

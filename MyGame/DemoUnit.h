@@ -35,6 +35,8 @@ public:
 	void SetDirection(DemoUnit::Direction newDirection);
 	// Returns the current direction of the Hero
 	DemoUnit::Direction GetDirection() const;
+	// Deletes the demo texture when we don't need it
+	void UnitDelete();
 private:
 	// Sprite object of the demo unit's image
 	Salt::Sprite mDemo;

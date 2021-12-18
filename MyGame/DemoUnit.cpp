@@ -77,6 +77,11 @@ DemoUnit::Direction DemoUnit::GetDirection() const
 	return mDirection;
 }
 
+void DemoUnit::UnitDelete()
+{
+	mDemo.SpriteDelete();
+}
+
 bool DemoUnit::IsPositionPossible(int newX, int newY, int& windowWidth, int& windowHeight) const
 {
 	if (newX < 0 ||

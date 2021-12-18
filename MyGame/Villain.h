@@ -16,6 +16,7 @@ public:
 	Villain();
 	// Initializes the image, x position, and y position
 	Villain(const std::string& VillainPicture);
+	~Villain();
 	bool Update(int windowWidth, int windowHeight);
 	// Returns width of the villain
 	virtual int GetUnitWidth() const override;
@@ -35,6 +36,7 @@ public:
 	void SetPosY(int newY);
 	// Will teleport the villain in a random place on the map. Cannot go out of window boundaries
 	void Teleport(int windowWidth, int windowHeight);
+	// Deletes the villain texture when we don't need it
 	virtual void UnitDelete() override;
 private:
 	// Sprite object of the villain's image

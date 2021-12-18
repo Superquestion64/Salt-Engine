@@ -18,6 +18,11 @@ Villain::Villain(const std::string& VillainPicture) : mPosX(0), mPosY(0)
 	mVillain.LoadImage(VillainPicture);
 }
 
+Villain::~Villain()
+{
+	UnitDelete();
+}
+
 bool Villain::Update(int windowWidth, int windowHeight)
 {
 	Teleport(windowWidth, windowHeight);
