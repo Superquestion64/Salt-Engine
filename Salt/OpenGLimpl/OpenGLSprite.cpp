@@ -15,7 +15,6 @@ namespace Salt
 	}
 	OpenGLSprite::~OpenGLSprite()
 	{
-		
 	}
 	void OpenGLSprite::LoadImage(const std::string& pictureFile)
 	{
