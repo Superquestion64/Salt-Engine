@@ -1,16 +1,19 @@
 #pragma once
 /* 
 Author: Charles Vega
-Last Modified: December 16, 2021
+Last Modified: December 17, 2021
 This is the header class for a game created through the Salt engine
 In the game the hero must consume salt to evolve
 The villain rapidly evolves with time and teleports around the map
 When the hero is powerful enough they can eat the villain and win
-If the villain reaches its final stage it becomes game over
+If the villain reaches its final form it becomes game over
 */
-
 #include "Salt.h"
-#include "Unit.h"
+#include "Hero.h"
+#include "Background.h"
+#include "SaltSpawner.h"
+#include "Villain.h"
+#include "DemoUnit.h"
 #include <vector>
 
 class MyGameApp : public Salt::SaltApp
@@ -22,33 +25,29 @@ public:
 	virtual void OnUpdate() override;
 	// This function detects any key presses that occur
 	virtual void OnKeyPressed(Salt::KeyPressedEvent& event) override;
-
 private:
-	// mHero is playable, mVillain will be the villain, mBackground is the background
-	Unit mHero, mVillain, mBackground;
+	// mHero is playable, mVillain will be the villain
+	// The current stage of the hero is at index 24
+	Hero mHero{ "Assets/Textures/TrueHero1.png", 0, 0, 10 };
+	// The current stage of the villain is at index 26
+	Villain mVillain{ "Assets/Textures/OddVillain1.png" };
+	// BG is the background, we initilaize it with intro part 1
+	Background BG{ "Assets/Textures/Intro1.png" };
 	// The demo character can be the hero or the villain depending on the ending
 	// The demo character is always the hero for the intro
-	Unit mDemoCharacter{ "Assets/Textures/TrueHero1.png", 400, 600, 10 };
+	DemoUnit mDemoCharacter{ "Assets/Textures/TrueHero1.png", 400, 600, 10 };
 	// The objects in mSalt are meant to be eaten by the hero
-	std::vector<Unit> mSalt;
+	std::vector<SaltSpawner> mSalt;
 	// Checks if an ending has been reached
 	bool mEndFlag{ false };
 	// Will be set to false when the intro is finished
 	bool mPlayIntroFlag{ true };
-	// Will be set to true when it should play
+	// Will be set to true when it should intro part 2 should play
 	bool mSetIntro2Flag{ false };
-	// Will be set to true if the hero reaches final form
-	bool mFinalHeroFlag{ false };
 	// Counts the number of frames that have passed
 	size_t mFrameCounter;
-	// Keeps track of the amount of salt eaten by the hero
-	size_t mSaltConsumed;
 	// Shader object for drawing
 	Salt::Shader mShader;
-	// Will contain the address of the hero's picture
-	std::string mHeroPicture;
-	// Will contain the address of the villain's picture
-	std::string mVillainPicture;
 	// Stores the width and height of the window
 	int mWindowWidth{ 0 };
 	int mWindowHeight{ 0 };
@@ -64,20 +63,10 @@ private:
 	void VictorySequence();
 	// Will spawn salt randomly on the map
 	void SpawnSalt();
-	// Teleports and evolves the villain
-	void TeleportVillain();
-	// Evolves the villain when appropriate
-	void EvolveVillain();
-	// Evolves the hero when appropriate
-	void EvolveHero();
-	// Always returns true and will cause the villain's victory to play
-	bool VillainVictoryCondition();
-	// Always returns true and will cause the Hero's victory to play
-	bool HeroVictoryCondition();
-	// Determines if the villain should be eaten by the hero
-	void EatVillain();
-	// Determines if salt should be eaten by the hero
-	void EatSalt();
-	// Will draw all the current salt
+	// Will set up the ending sequence for the villain's victory
+	void VillainVictorySetUp();
+	// Will set up the ending sequence for the hero's victory
+	void HeroVictorySetUp();
+	// Will Draw all the salt on the map
 	void DrawSalt();
 };

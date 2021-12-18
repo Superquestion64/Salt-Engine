@@ -147,6 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="DemoUnit.cpp" />
     <ClCompile Include="main.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -154,7 +156,9 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Anonymous\Downloads\Game Engine\MyGame\Salt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="MyGameApp.cpp" />
-    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="SaltSpawner.cpp" />
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="Villain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Salt\Salt.vcxproj">
@@ -162,8 +166,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="DemoUnit.h" />
     <ClInclude Include="MyGameApp.h" />
+    <ClInclude Include="SaltSpawner.h" />
+    <ClInclude Include="Hero.h" />
     <ClInclude Include="Unit.h" />
+    <ClInclude Include="Villain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

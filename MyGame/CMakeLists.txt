@@ -1,4 +1,21 @@
-add_executable(my_game main.cpp MyGameApp.h MyGameApp.cpp Unit.h Unit.cpp)
+add_executable(
+	my_game 
+	main.cpp 
+	MyGameApp.h 
+	MyGameApp.cpp 
+	Unit.h 
+	Villain.h 
+	Villain.cpp 
+	Background.h 
+	Background.cpp 
+	SaltSpawner.h 
+	SaltSpawner.cpp 
+	DemoUnit.h 
+	DemoUnit.cpp
+	Hero.h
+	Hero.cpp
+	)
+	
 target_link_libraries(my_game salt_lib)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/.. PROPERTY VS_STARTUP_PROJECT my_game)
 
