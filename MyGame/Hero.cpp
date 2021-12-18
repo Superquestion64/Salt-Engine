@@ -162,6 +162,11 @@ Hero::Direction Hero::NewDirection() const
 	return newDir;
 }
 
+void Hero::UnitDelete()
+{
+	mHero.SpriteDelete();
+}
+
 bool Hero::IsPositionPossible(int newX, int newY, int& windowWidth, int& windowHeight) const
 {
 	if (newX < 0 ||
@@ -193,6 +198,7 @@ void Hero::EatSalt(std::vector<SaltSpawner>& mSalt)
 	{
 		if (CollideWith(*it))
 		{
+			it->UnitDelete();
 			it = mSalt.erase(it);
 			mSaltConsumed++;
 		}

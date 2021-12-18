@@ -29,7 +29,6 @@ namespace Salt
 			glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
 			std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
 		}
-
 		// Convert fragment file to c string
 		std::ifstream fragmentFileStream{ fragmentFile };
 		if (!fragmentFileStream.is_open())
@@ -65,7 +64,10 @@ namespace Salt
 		}
 		glDeleteShader(vertexShader);
 		glDeleteShader(fragmentShader);
-
+		cVertexCode = nullptr;
+		delete cVertexCode;
+		cFragmentCode = nullptr;
+		delete cFragmentCode;
 	}
 	void OpenGLShader::SetVec2IntUniform(const std::string& unifName, int width, int height)
 	{

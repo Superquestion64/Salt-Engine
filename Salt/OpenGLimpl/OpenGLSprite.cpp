@@ -15,10 +15,14 @@ namespace Salt
 	}
 	OpenGLSprite::~OpenGLSprite()
 	{
-
+		if (mTexture != 0)
+			glDeleteTextures(1, &mTexture);
 	}
+	// Loads new sprite textures while deleting previous ones
 	void OpenGLSprite::LoadImage(const std::string& pictureFile)
 	{
+		if (mTexture != 0)
+			glDeleteTextures(1, &mTexture);
 		unsigned char* image{ nullptr };
 		int numChannels{ 0 };
 		stbi_set_flip_vertically_on_load(true);
@@ -51,5 +55,10 @@ namespace Salt
 	void OpenGLSprite::Bind()
 	{
 		glBindTexture(GL_TEXTURE_2D, mTexture);
+	}
+	void OpenGLSprite::DeleteTexture()
+	{
+		if (mTexture != 0)
+			glDeleteTextures(1, &mTexture);
 	}
 }

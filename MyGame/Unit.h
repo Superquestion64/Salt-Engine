@@ -20,6 +20,7 @@ public:
 	virtual int GetUnitWidth() const = 0;
 	// Returns the height of the unit
 	virtual int GetUnitHeight() const = 0;
+	virtual void UnitDelete() = 0;
 	virtual ~Unit() {};
 };
 

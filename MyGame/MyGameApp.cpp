@@ -46,6 +46,12 @@ void MyGameApp::OnUpdate()
 		// After enough time passes increase the stage of the villain
 		if (mFrameCounter % int(FRAMES_PER_SECOND * 4) == 0)
 			mEndFlag = mVillain.Update(mWindowWidth, mWindowHeight);
+		// Draw all the current salt
+		DrawSalt();
+		mVillain.Draw(mShader);
+		// Update the position of the hero then draw
+		mHero.UpdatePosition(mWindowWidth, mWindowHeight);
+		mHero.Draw(mShader);
 		// If the villain has reached their final form
 		if (mEndFlag)
 			VillainVictorySetUp();
@@ -55,12 +61,6 @@ void MyGameApp::OnUpdate()
 			if (mEndFlag)
 				HeroVictorySetUp();
 		}
-		// Draw all the current salt
-		DrawSalt();
-		mVillain.Draw(mShader);
-		// Update the position of the hero then draw
-		mHero.UpdatePosition(mWindowWidth, mWindowHeight);
-		mHero.Draw(mShader);
 	}
 	else
 	{
@@ -204,6 +204,8 @@ void MyGameApp::VillainVictorySetUp()
 	mDemoCharacter.SetDemo("Assets/Textures/FinalVillain.png");
 	mDemoCharacter.SetPosX(mWindowWidth / 4);
 	mDemoCharacter.SetPosY(mWindowHeight / 4);
+	mVillain.UnitDelete();
+	mHero.UnitDelete();
 	// Reset the frame counter
 	mFrameCounter = 0;
 	ClearSalt();
@@ -217,6 +219,8 @@ void MyGameApp::HeroVictorySetUp()
 	mDemoCharacter.SetPosX(mWindowWidth / 3);
 	mDemoCharacter.SetPosY(mWindowHeight / 4);
 	mHero.SetHero("Assets/Textures/FinalHero.png");
+	mVillain.UnitDelete();
+	mHero.UnitDelete();
 	// Reset the frame counter
 	mFrameCounter = 0;
 	ClearSalt();
@@ -234,7 +238,12 @@ void MyGameApp::DrawSalt()
 // Clear all the salt
 void MyGameApp::ClearSalt()
 {
-	mSalt.erase(mSalt.begin(), mSalt.end());
+	auto it = mSalt.begin();
+	while (it != mSalt.end())
+	{
+		it->UnitDelete();
+		it = mSalt.erase(it);		
+	}
 }
 
 // This function detects any key presses that occur

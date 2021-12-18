@@ -75,6 +75,11 @@ void Villain::Teleport(int windowWidth, int windowHeight)
 	SetPosY(newY);
 }
 
+void Villain::UnitDelete()
+{
+	mVillain.SpriteDelete();
+}
+
 bool Villain::EvolveVillain()
 {
 	if (mVillainPicture[26] < '9')

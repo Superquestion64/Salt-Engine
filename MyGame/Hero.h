@@ -56,6 +56,7 @@ public:
 	void UpdatePosition(int windowWidth, int windowHeight);
 	// Function to get a random direction
 	Hero::Direction NewDirection() const;
+	virtual void UnitDelete() override;
 private:
 	// Helper function calculates if a new position would put the Hero outside of the window boundaries
 	bool IsPositionPossible(int newX, int newY, int& windowWidth, int& windowHeight) const;

@@ -35,6 +35,7 @@ public:
 	void SetPosY(int newY);
 	// Will teleport the villain in a random place on the map. Cannot go out of window boundaries
 	void Teleport(int windowWidth, int windowHeight);
+	virtual void UnitDelete() override;
 private:
 	// Sprite object of the villain's image
 	Salt::Sprite mVillain;

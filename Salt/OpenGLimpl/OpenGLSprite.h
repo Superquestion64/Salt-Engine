@@ -18,6 +18,7 @@ namespace Salt
 		virtual int GetWidth() const override;
 		virtual int GetHeight() const override;
 		virtual void Bind() override;
+		virtual void DeleteTexture() override;
 
 	private:
 		unsigned int mTexture{ 0 };

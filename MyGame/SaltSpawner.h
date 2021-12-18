@@ -24,6 +24,7 @@ public:
 	virtual int GetUnitWidth() const override;
 	// Returns the height of the salt
 	virtual int GetUnitHeight() const override;
+	virtual void UnitDelete() override;
 private:
 	// Sprite object of the salt's image
 	Salt::Sprite mSalt;

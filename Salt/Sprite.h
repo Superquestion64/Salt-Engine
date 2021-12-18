@@ -21,6 +21,7 @@ namespace Salt
 		int GetHeight() const;
 		// Binds the image to the sprite object
 		void Bind();
+		void SpriteDelete();
 
 	private:
 		// Any SpriteImplementation class is valid for creating a Sprite

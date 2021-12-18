@@ -39,3 +39,8 @@ int SaltSpawner::GetUnitHeight() const
 {
 	return mSalt.GetHeight();
 }
+
+void SaltSpawner::UnitDelete()
+{
+	mSalt.SpriteDelete();
+}
