@@ -46,6 +46,7 @@ void MyGameApp::OnUpdate()
 		// After enough time passes increase the stage of the villain
 		if (mFrameCounter % int(FRAMES_PER_SECOND * 4) == 0)
 			mEndFlag = mVillain.Update(mWindowWidth, mWindowHeight);
+		// If the villain has reached their final form
 		if (mEndFlag)
 			VillainVictorySetUp();
 		else
